@@ -1,0 +1,1535 @@
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info:DEBUG:Let's get started!!!!
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info:DEBUG:Player_1 is assign as code user.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:Successfully instantiated and initialized cards.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:Successfully instantiated and initialized players.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:player_3 -> player_4 -> player_5 -> player_1 -> player_2
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:Successfully instantiated and initialized board.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:Successfully instantiated game history data structures.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.init_game_elements:DEBUG:Successfully instantiated and initialized rules.
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,305:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: active with cash: 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: active with cash: 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 3(0-indexed), player_1 start betting
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game1 is starting.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 0(0-indexed), dealer is player_3
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:player_4 gets hole cards:
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; heart; red
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; club; black
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:player_5 gets hole cards:
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; heart; red
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; spade; black
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; diamond; red
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; spade; black
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; club; black
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 44 cards.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; diamond; red
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 42 cards.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 1
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 is forced to bet $5 as small blind
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 currently has $95.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 is forced to bet $10 as big blind
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 currently has $90.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, SMALL_BLIND, BIG_BLIND, None, None
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, SMALL_BLIND, BIG_BLIND, None, None
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Fold ---
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.FOLD
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, SMALL_BLIND, BIG_BLIND, FOLD, None
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, SMALL_BLIND, BIG_BLIND, FOLD, None
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 100
+2023-12-12 14:22:59,306:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Fold ---
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 100
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, SMALL_BLIND, BIG_BLIND, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, SMALL_BLIND, BIG_BLIND, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 100
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to make a --- Call ---
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.CALL
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 90
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, SMALL_BLIND, BIG_BLIND, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, SMALL_BLIND, BIG_BLIND, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 95
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 5
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in pre-flop round
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Raise Bet ---
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.RAISE_BET
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 80
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, RAISE_BET, None, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, RAISE_BET, BIG_BLIND, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 90
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in pre-flop round
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to --- Fold ---
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 90
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, RAISE_BET, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, RAISE_BET, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 90
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to make a --- Call ---
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.CALL
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 80
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, RAISE_BET, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, RAISE_BET, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,307:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.FLOP
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 1(0-indexed), player_4 start betting
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 80
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in flop round
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Check ---
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CHECK
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 80
+2023-12-12 14:22:59,308:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 80
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in flop round
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Bet ---
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.BET
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 70
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 80
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,309:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in flop round
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to make a --- Call ---
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CALL
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 70
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, CALL, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, CALL, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.TURN
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 1(0-indexed), player_4 start betting
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; spade; black
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 70
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,310:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in turn round
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Check ---
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CHECK
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 70
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 70
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,311:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in turn round
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Bet ---
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.BET
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 50
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 70
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in turn round
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to make a --- Call ---
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CALL
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 50
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, CALL, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, CALL, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,312:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.RIVER
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 1(0-indexed), player_4 start betting
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; spade; black
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; heart; red
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 50
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,313:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in river round
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Check ---
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CHECK
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 50
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 50
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in river round
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Bet ---
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.BET
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 30
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, None, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, CHECK, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 50
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,314:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in river round
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Fold ---
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.FOLD
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 50
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BET, FOLD, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BET, FOLD, FOLD, FOLD, FOLD
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 can get $130
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 160
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: active with cash: 50
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: active with cash: 90
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 100
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 100
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game2 is starting.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 1(0-indexed), dealer is player_4
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:player_5 gets hole cards:
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; heart; red
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; club; black
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; club; black
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,315:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; diamond; red
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; heart; red
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; spade; black
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 44 cards.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:player_4 gets hole cards:
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; heart; red
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 42 cards.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 2
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 is forced to bet $5 as small blind
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 currently has $85.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 is forced to bet $10 as big blind
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 currently has $90.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, None, SMALL_BLIND, BIG_BLIND, None
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, None, SMALL_BLIND, BIG_BLIND, None
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 100
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to make a --- Call ---
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 90
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, None, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, None, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 160
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Fold ---
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.FOLD
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 160
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, None, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, None, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 50
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in pre-flop round
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- Fold ---
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.FOLD
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 50
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, SMALL_BLIND, BIG_BLIND, CALL
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 85
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 5
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,316:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in pre-flop round
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to --- Raise Bet ---
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.RAISE_BET
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 70
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, RAISE_BET, None, None
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, RAISE_BET, BIG_BLIND, CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 90
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to make a --- Call ---
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 80
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, RAISE_BET, CALL, None
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, RAISE_BET, CALL, CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 90
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to make a --- Call ---
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 80
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, RAISE_BET, CALL, CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, RAISE_BET, CALL, CALL
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.FLOP
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 2(0-indexed), player_5 start betting
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: FOLD, FOLD, None, None, None
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, None, None, None
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 70
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,317:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in flop round
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to --- Check ---
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.CHECK
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 70
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, CHECK, None, None
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, CHECK, None, None
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 80
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Bet ---
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.BET
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 70
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, None, BET, None
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, CHECK, BET, None
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,318:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 80
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in flop round
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Raise Bet ---
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.RAISE_BET
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 60
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, None, None, RAISE_BET
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, CHECK, BET, RAISE_BET
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 70
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,319:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in flop round
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to make a --- Call ---
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.CALL
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 50
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, CALL, None, RAISE_BET
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, CALL, BET, RAISE_BET
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 70
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Fold ---
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.FOLD
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 70
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, CALL, FOLD, RAISE_BET
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, CALL, FOLD, RAISE_BET
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.TURN
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 2(0-indexed), player_5 start betting
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,320:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; diamond; red
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: FOLD, FOLD, None, FOLD, None
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, None, FOLD, None
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 50
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in turn round
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to --- Bet ---
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.BET
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 30
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, BET, FOLD, None
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, BET, FOLD, None
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 60
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,321:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in turn round
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Raise Bet ---
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.RAISE_BET
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 20
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, None, FOLD, RAISE_BET
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, BET, FOLD, RAISE_BET
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:player_5 start to move with cash 30
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 20
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,322:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 currently in turn round
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.player:DEBUG:player_5 executes its _execute_action function
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_5 decides to --- All-in --- with amount $30!
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_5 do the Action.ALL_IN
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 cash info (current_cash): 0
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, ALL_IN, FOLD, None
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, ALL_IN, FOLD, RAISE_BET
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 20
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 40
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 2
+2023-12-12 14:22:59,323:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in turn round
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- All-in --- with amount $20!
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.ALL_IN
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 0
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, FOLD, ALL_IN, FOLD, ALL_IN
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, ALL_IN, FOLD, ALL_IN
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.RIVER
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 2(0-indexed), player_5 start betting
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; diamond; red
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; club; black
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: FOLD, FOLD, ALL_IN_ALREADY, FOLD, ALL_IN_ALREADY
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: FOLD, FOLD, ALL_IN_ALREADY, FOLD, ALL_IN_ALREADY
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.PRE_FLOP
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3is inactive, but has total hands = (1, 13, 13, 12, 11, 11, 10)
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4is inactive, but has total hands = (13, 13, 13, 12, 11, 11, 10)
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 has total hands = (1, 1, 13, 13, 12, 11, 10), having straight where best hand is 1, 13, 12, 11, 10
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1is inactive, but has total hands = (13, 13, 12, 12, 11, 11, 10)
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 has total hands = (13, 13, 12, 11, 10, 10, 10), having full_house where best hand is 10, 10, 10, 13, 13
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 has no rank becasue it status = FOLD
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 has no rank becasue it status = FOLD
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5's rank = 2, which have hand = 1, 13, 12, 11, 10
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 has no rank becasue it status = FOLD
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2's rank = 1, which have hand = 10, 10, 10, 13, 13
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The winner is : player_2
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $170
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 160
+2023-12-12 14:22:59,324:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: active with cash: 50
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: active with cash: 0
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 70
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 170
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The winner is : player_2
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $50
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 160
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: active with cash: 50
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: active with cash: 0
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 70
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 220
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 1(0-indexed), player_4 start betting
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game3 is starting.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 3(0-indexed), dealer is player_1
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; spade; black
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; heart; red
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:player_4 gets hole cards:
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; diamond; red
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; club; black
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; spade; black
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 44 cards.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 3
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 is forced to bet $5 as small blind
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 currently has $215.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 is forced to bet $10 as big blind
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 currently has $150.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: BIG_BLIND, None, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: BIG_BLIND, None, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 50
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in pre-flop round
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to make a --- Call ---
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CALL
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 40
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BIG_BLIND, CALL, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BIG_BLIND, CALL, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: BIG_BLIND, CALL, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BIG_BLIND, CALL, LOST, None, SMALL_BLIND
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,325:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 70
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Raise Bet ---
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 50
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, None, LOST, RAISE_BET, None
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BIG_BLIND, CALL, LOST, RAISE_BET, SMALL_BLIND
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 215
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 15
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Raise Bet ---
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 190
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, None, LOST, None, RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: BIG_BLIND, CALL, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 150
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 2
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Raise Bet ---
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 120
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, None, LOST, None, None
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, CALL, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 40
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 30
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 3
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in pre-flop round
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to make a --- Call ---
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.CALL
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, CALL, LOST, None, None
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, CALL, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, CALL, LOST, None, None
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, CALL, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 50
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 20
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,326:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 3
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to make a --- Call ---
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.CALL
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 30
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, CALL, LOST, CALL, None
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, CALL, LOST, CALL, RAISE_BET
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 190
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 30
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 3
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to make a --- Call ---
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.CALL
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 180
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, CALL, LOST, CALL, CALL
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, CALL, LOST, CALL, CALL
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.FLOP
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, None, LOST, None, None
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, None, LOST, None, None
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 180
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,327:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in flop round
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Bet ---
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.BET
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 170
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, None, LOST, None, BET
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, None, LOST, None, BET
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 120
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in flop round
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to make a --- Call ---
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.CALL
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 110
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, None, LOST, None, BET
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, None, LOST, None, BET
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 10
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,328:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in flop round
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- All-in --- with amount $10!
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 do the Action.ALL_IN
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 cash info (current_cash): 0
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, ALL_IN, LOST, None, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, ALL_IN, LOST, None, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, ALL_IN, LOST, None, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, ALL_IN, LOST, None, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 30
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Fold ---
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.FOLD
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 30
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, ALL_IN, LOST, FOLD, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, ALL_IN, LOST, FOLD, BET
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.TURN
+2023-12-12 14:22:59,329:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; heart; red
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, ALL_IN_ALREADY, LOST, FOLD, None
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, ALL_IN_ALREADY, LOST, FOLD, None
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 170
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in turn round
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Bet ---
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.BET
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 150
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 110
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.TURN, bet/raise_bet = 20
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,330:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in turn round
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to make a --- Call ---
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.CALL
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 90
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: CALL, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: CALL, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.RIVER
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; heart; red
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; heart; red
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, ALL_IN_ALREADY, LOST, FOLD, None
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, ALL_IN_ALREADY, LOST, FOLD, None
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 150
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,331:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in river round
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Bet ---
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.BET
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 130
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: None, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 90
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in river round
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Raise Bet ---
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.RAISE_BET
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 50
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, None
+2023-12-12 14:22:59,332:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:player_4 start to move with cash 0
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 40
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 currently in river round
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.player:DEBUG:player_4 executes its _execute_action function
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 decides to --- All-in --- with amount $0!
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_4 does not have more money for betting
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_4 tries an invalid move, assign to lost
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, BET
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 130
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 20
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,333:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in river round
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Raise Bet ---
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 90
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: None, LOST, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 50
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 40
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 2
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in river round
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Raise Bet ---
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 10
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,334:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 90
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.RIVER, bet/raise_bet = 20
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 60
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 20
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 3
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in river round
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to make a --- Call ---
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.CALL
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 70
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: RAISE_BET, LOST, LOST, FOLD, CALL
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: RAISE_BET, ALL_IN_ALREADY, LOST, FOLD, CALL
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.PRE_FLOP
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 has total hands = (13, 12, 12, 11, 11, 11, 10), having full_house where best hand is 11, 11, 11, 12, 12
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4is inactive, but has total hands = (13, 11, 11, 11, 10, 10, 10)
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5is inactive, but has total hands = (13, 11, 11, 11, 10)
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1is inactive, but has total hands = (13, 12, 12, 11, 11, 11, 10)
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 has total hands = (13, 13, 13, 11, 11, 11, 10), having full_house where best hand is 13, 13, 13, 11, 11
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3's rank = 2, which have hand = 11, 11, 11, 12, 12
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 has no rank becasue it status = LOST
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 has no rank becasue it status = LOST
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 has no rank becasue it status = FOLD
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2's rank = 1, which have hand = 13, 13, 13, 11, 11
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The winner is : player_2
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $230
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 10
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: lost with cash: 0
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: lost with cash: 0
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 30
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 300
+2023-12-12 14:22:59,335:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The winner is : player_2
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $160
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 10
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: lost with cash: 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: lost with cash: 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 30
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 460
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game4 is starting.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 4(0-indexed), dealer is player_2
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; club; black
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; heart; red
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; club; black
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; spade; black
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; diamond; red
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 4
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 is forced to bet $5 as small blind
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 currently has $5.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 is forced to bet $10 as big blind
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 currently has $20.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: SMALL_BLIND, LOST, LOST, BIG_BLIND, None
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: SMALL_BLIND, LOST, LOST, BIG_BLIND, None
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 460
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Fold ---
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.FOLD
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 460
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: SMALL_BLIND, LOST, LOST, BIG_BLIND, FOLD
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: SMALL_BLIND, LOST, LOST, BIG_BLIND, FOLD
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 5
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 5
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Fold ---
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.FOLD
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 5
+2023-12-12 14:22:59,336:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, BIG_BLIND, FOLD
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, BIG_BLIND, FOLD
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 can get $15
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 5
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: lost with cash: 0
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: lost with cash: 0
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 35
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 460
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 0(0-indexed), player_3 start betting
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game5 is starting.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 0(0-indexed), dealer is player_3
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; spade; black
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; heart; red
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 5
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 is forced to bet $5 as small blind
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 currently has $30.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 is forced to bet $10 as big blind
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 currently has $450.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: None, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: None, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:player_3 start to move with cash 5
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 currently in pre-flop round
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.player:DEBUG:player_3 executes its _execute_action function
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_3 decides to --- Fold ---
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_3 do the Action.FOLD
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 cash info (current_cash): 5
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, SMALL_BLIND, BIG_BLIND
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 30
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,337:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 5
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to make a --- Call ---
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.CALL
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 25
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, CALL, BIG_BLIND
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, CALL, BIG_BLIND
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 450
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Check ---
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.CHECK
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 450
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, CALL, CHECK
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, CALL, CHECK
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:This betting is over.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:All players made the decision, the betting is over.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The phase changed to Phase.FLOP
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 3(0-indexed), player_1 start betting
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.board:DEBUG:Board: burn 1 cards before dealing community cards
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.board:DEBUG:Current community cards on the table:
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; spade; black
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; heart; red
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; heart; red
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, None, None
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, None, None
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 25
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Fold ---
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.FOLD
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 25
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: FOLD, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: FOLD, LOST, LOST, FOLD, None
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $20
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: active with cash: 5
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: lost with cash: 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: lost with cash: 0
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 25
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 470
+2023-12-12 14:22:59,338:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 3(0-indexed), player_1 start betting
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game6 is starting.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 3(0-indexed), dealer is player_1
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:player_3 gets hole cards:
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; heart; red
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: J; club; black
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; spade; black
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: Q; heart; red
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 46 cards.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 6
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 is forced to bet $5 as small blind
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 currently has $465.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 does not have cash to pay big blind, assign to lost
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 is forced to bet $10 as big blind
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 currently has $15.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is initializing the betting parameters. ------------
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_bet_count is: 1
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_raise_count is: 0
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, BIG_BLIND, SMALL_BLIND
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, BIG_BLIND, SMALL_BLIND
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 15
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 10
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 0
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 0
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Raise Bet ---
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.RAISE_BET
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 5
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, RAISE_BET, None
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, RAISE_BET, SMALL_BLIND
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:------------Non-player_1 players start to bet. ------------
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:player_2 start to move with cash 465
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 5
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 15
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 1
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 currently in pre-flop round
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 executes its _execute_action function
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_2 decides to --- Raise Bet ---
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 bet/raise, updating players_last_move_list
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_2 do the Action.RAISE_BET
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 cash info (current_cash): 440
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, None, RAISE_BET
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, None, RAISE_BET
+2023-12-12 14:22:59,339:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, None, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, None, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, RAISE_BET, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:At least one player has not moved yet. The betting continues.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:player_1 start to move with cash 5
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:Round = Phase.PRE_FLOP, bet/raise_bet = 10
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The player already bet = 20
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The player has bet_to_follow = 10
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:current_bet_count = 1
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:current_raise_count = 2
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.player:DEBUG:player_1 executes its _execute_action function
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.action_choices:DEBUG:player_1 decides to --- Fold ---
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:Board: player_1 do the Action.FOLD
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 cash info (current_cash): 5
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list is: LOST, LOST, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info:DEBUG:The current players_last_move_list_hist is: LOST, LOST, LOST, FOLD, RAISE_BET
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:--The dealer is checking if the betting is over.--
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Only one player is active, the betting is over.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 can get $50
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:                       Player Info              
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 status: lost with cash: 0
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 status: lost with cash: 0
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 status: lost with cash: 0
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 status: active with cash: 5
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 status: active with cash: 490
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:*********************************************************
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:The current current_betting_idx is: 4(0-indexed), player_2 start betting
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:======================================================
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Game7 is starting.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current dealer position = 4(0-indexed), dealer is player_2
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------ Dealer is dealing hole cards ------------
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:player_1 gets hole cards:
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; heart; red
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: 10; club; black
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 50 cards.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:player_2 gets hole cards:
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: K; diamond; red
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.board:DEBUG:---> card info: A; spade; black
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current deck has 48 cards.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Current hand in game: 7
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:------------Dealer is forcing small and bid blind bet ------------
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.player:DEBUG:player_2 is forced to bet $5 as small blind
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 currently has $485.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 does not have cash to pay big blind, assign to lost
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:Concluding tournament:
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_2 ended up having $485 with rank 1.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_3 ended up having $0 with rank 2.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_4 ended up having $0 with rank 2.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_5 ended up having $0 with rank 2.
+2023-12-12 14:22:59,340:open_poker.envs.poker_util.logging_info.dealer:DEBUG:player_1 ended up having $0 with rank 2.
