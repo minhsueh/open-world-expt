@@ -1,5 +1,5 @@
 DQN training script:\
-&nbsp; ./DQN/train_agent_q_replay_memory_frame.py
+&nbsp;&nbsp; ./DQN/train_agent_q_replay_memory_frame.py
 
 Figure 3(a)\
 >experiment script:\
