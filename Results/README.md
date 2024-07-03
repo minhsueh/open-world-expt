@@ -2,11 +2,11 @@ DQN training script:
 - ./DQN/train_agent_q_replay_memory_frame.py
 
 Figure 3(a):
--experiment script:
+* experiment script:
   - ./DQN/test_agent_q_replay_memory_frame.py
--plotting script:
+* plotting script:
   - ./DQN/dqn_performance_seperate.py
--results:
+* results:
   - ./DQN/agents/results/0517_dqn_agent_testing/NN_seed20/0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9/0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9_NN_seed20_avg_cash.png
 
 
