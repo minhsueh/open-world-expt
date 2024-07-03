@@ -1,0 +1,6 @@
+test/
+DOC
+open_world_expt.egg-info/
+public_env/
+.DS_Store
+.env/
