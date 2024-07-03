@@ -1,9 +1,9 @@
-DQN training script:\
-&nbsp;&nbsp; ./DQN/train_agent_q_replay_memory_frame.py
+DQN training script:
+- ./DQN/train_agent_q_replay_memory_frame.py
 
-Figure 3(a)\
->experiment script:\
->> ./DQN/test_agent_q_replay_memory_frame.py\
+Figure 3(a)
+experiment script:\
+- ./DQN/test_agent_q_replay_memory_frame.py\
 >plotting script:\
 >> ./DQN/dqn_performance_seperate.py\
 results:\
