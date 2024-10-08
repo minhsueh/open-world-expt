@@ -5,3 +5,5 @@ PyYAML==6.0.1
 matplotlib==3.8.2
 pandas==2.1.4
 scipy==1.11.4
+gym-open-poker
+tensorflow==2.15.0

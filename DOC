@@ -1,0 +1,82 @@
+
+DQN MODEL:
+	0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9.keras
+
+
+-----------------------
+LR difference
+folder:
+	0409_dqn_agent_card_strength_testing
+
+
+-----------------------
+training:
+	train_agent_q_replay_memory_frame.py
+
+
+
+-----------------------
+
+background agent combination:
+folder:
+	0517_dqn_agent_testing
+experimenal script:
+	test_agent_q_replay_memory_frame.py
+plot:
+	dqn_performance_seperate.py: y: cash, x: different agent count
+
+-----------------------
+pre and post novelty:
+folder:
+	0520_dqn_agent_testing
+experimenal script:
+	test_agent_q_replay_memory_frame_batch.py
+plot:
+	pool_estimate_pre_post_all_nov.py: y: cash, x: pre and novelty
+
+
+-----------------------
+depth 2:
+folder:
+	0524_dqn_agent_testing
+experimenal script:
+	test_agent_q_replay_memory_frame_batch_depth2.sh
+	test_agent_q_replay_memory_frame_batch.py
+plot:
+	non_linear_heat.py: heat plot of depth two 
+
+-----------------------
+depth experiment:
+folder:
+	0529_dqn_agent_testing_1_*
+experimenal script:
+	test_agent_q_replay_memory_frame_batch_random.sh
+	test_agent_q_replay_memory_frame_batch_random.py
+plot:
+	novel_d.py: y: cash. x: depth
+
+
+-----------------------
+different background agent commination (NN)
+folder:
+	0625_dqn_agent_testing
+	0626_dqn_agent_testing
+experimenal script:
+	test_agent_q_replay_memory_frame_0625.py
+	test_agent_q_replay_memory_frame_0626.py
+plot:
+	dqn_performance_0626.py
+	
+-----------------------
+data source:
+	test/0409_dqn_agent_card_strength_testing
+folder:
+	0627_lr_plot
+
+
+
+
+
+
+
+
