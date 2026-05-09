@@ -25,10 +25,41 @@ background_agents_raw_list:
 # buy_in_amount: 100
 # bankroll_limit: 1500
 # --------termination conditions--------
+# max_game_limitation: 999
+# max_time_limitation: 999
+# --------novelty list--------
+novelty_list:
+  # - novelty_name: card.CardDistHigh
+  # - novelty_name: card.CardDistLow
+  # - novelty_name: card.CardDistSuit
+  #    param:
+  #      prohibit_suit: "diamond"
+  # - novelty_name: card.CardDistOdd
+  #   param:
+  #    prohibit_parity: "odd"
+  # - novelty_name: card.CardDistColor
+  #  param:
+  #    prohibit_color: "red"
+  # - novelty_name: conclude_game.Incentive
+  #   param:
+  #     amount: -100
+   - novelty_name: action.GameFoldRestrict
+
+
+# --------general pokers rules--------
+# max_raise_count: 3
+# small_blind: 5
+# big_small_blind_ratio: 2 # big_blind = small_blind * big_small_blind_ratio
+# seed: 15
+# buy_in_amount: 100
+# bankroll_limit: 1500
+# --------termination conditions--------
 max_game_limitation: 30
 # max_time_limitation: 999
 # --------novelty list--------
 novelty_list:
+- novelty_name: action.GameFoldRestrict
+
 #  - CardDistLow
 #  - CardDistHigh
 #  - RANDOM
