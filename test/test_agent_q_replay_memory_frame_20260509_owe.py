@@ -42,7 +42,9 @@ def testing(
     owe_agent = AgentDQNReplayFrame()
 
     owe_agent.initialize(
-        learning=False, read_dqn_path=f"./agents/results/{model_name}.keras"
+        learning=False,
+        read_dqn_path=f"./agents/results/{model_name}.keras",
+        read_post_dqn_path=f"./agents/results/{model_name}_post_novelty.keras",
     )
 
     if NN_count is not None and N_count is not None:

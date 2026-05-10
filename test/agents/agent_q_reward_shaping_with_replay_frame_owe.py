@@ -98,6 +98,7 @@ class AgentDQNReplayFrame(OweAgent):
         delta=0.1,  # reward assignment factor
         random_seed=5,
         storing_folder_name=None,
+        heuristic_novelty_detection_window=3,  # the window size for heuristic novelty detection, if the performance in this window is all 0, then we consider it as novelty
     ):
         self.random_seed = random_seed
         self.initialized = False
@@ -162,6 +163,10 @@ class AgentDQNReplayFrame(OweAgent):
         self.performance_his = (
             []
         )  # boolean list indicating winning or losing in each tournament
+
+        # novelty detection
+        self.novelty_detected = False  # boolean value indicating whether novelty is detected in current tournament
+        self.heuristic_novelty_detection_window = heuristic_novelty_detection_window
 
     def _create_empty_dqn(self):
         opt = Adam(learning_rate=self.alpha)
@@ -241,16 +246,18 @@ class AgentDQNReplayFrame(OweAgent):
 
         return dqn
 
-    def initialize(self, learning=False, read_dqn_path=None):
+    def initialize(self, learning=False, read_dqn_path=None, read_post_dqn_path=None):
         if read_dqn_path is not None:
             print("model loading...")
             self.dqn = tf.keras.saving.load_model(read_dqn_path)
+            self.post_dqn = tf.keras.saving.load_model(read_post_dqn_path)
             self.target_dqn = tf.keras.saving.load_model(read_dqn_path)
             # print('-----')
             # for layer in self.dqn.layers:
             #    print(layer.get_weights())
         else:
             self.dqn = self._create_empty_dqn_w_dropout()
+            self.post_dqn = self._create_empty_dqn_w_dropout()
             self.target_dqn = self._create_empty_dqn_w_dropout()
 
         self.learning = learning
@@ -361,14 +368,19 @@ class AgentDQNReplayFrame(OweAgent):
         all_action_list = np.array(list(range(6)))
         allowable_actions = all_action_list[action_mask_bool]
 
-        encoded_observation = self.observation_encoder(observation, info)
-        predicted = self.dqn.predict(encoded_observation)
-
         # epsilon_greedy
         p = np.random.random()
         if p < self.epsilon:
             user_action = np.random.choice(allowable_actions)
         else:
+            encoded_observation = self.observation_encoder(observation, info)
+
+            if self.get_novelty_detected:
+                # detect novelty -> post dqn
+                predicted = self.post_dqn.predict(encoded_observation)
+            else:
+                # not detect novelty -> pre dqn
+                predicted = self.dqn.predict(encoded_observation)
             sorted_predicted = tf.argsort(predicted, direction="DESCENDING").numpy()
 
             for action_idx in np.nditer(sorted_predicted):
@@ -654,7 +666,16 @@ class AgentDQNReplayFrame(OweAgent):
         )
 
     def novelty_detection(self):
+        if len(self.performance_his) < self.heuristic_novelty_detection_window:
+            return 0
+        elif sum(self.performance_his[-self.heuristic_novelty_detection_window :]) == 0:
+            self.novelty_detected = True
+            return 1
         return 0
+
+    @property
+    def get_novelty_detected(self):
+        return self.novelty_detected
 
     def performance_recording(self, is_win: bool):
         self.performance_his.append(is_win)

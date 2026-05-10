@@ -1,11 +1,11 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 import matplotlib.lines as mlines
 
 
-OUTPUT_FOLDER = "0520_dqn_agent_testing/"
+# OUTPUT_FOLDER = "0520_dqn_agent_testing/"
+OUTPUT_FOLDER = "20260509_dqn_agent_testing_3/"
 model_name = "0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9"
 """
 novelty_list = [
@@ -90,27 +90,65 @@ OUTPUT_FILE_PATH = f"./agents/results/{OUTPUT_FOLDER}"
 
 # novelty_list = ["NN"]
 
-csv_file_pattern = OUTPUT_FILE_PATH + "{novelty}" + "/" + model_name + "/" + "pre_post_" + model_name + "_{novelty}.csv"
+csv_file_pattern = (
+    OUTPUT_FILE_PATH
+    + "{novelty}"
+    + "/"
+    + model_name
+    + "/"
+    + "pre_post_"
+    + model_name
+    + "_{novelty}.csv"
+)
 
 measurement_list = ["cash", "win_rate", "rank", "winning_percentage"]
 measurement = "cash"
 
 name_dict = {"r7_d0_p0": "AgentR", "r0_d7_p0": "AgentD", "r0_d0_p7": "AgentP"}
-name_to_column_dict = {"r7_d0_p0": "agent_random", "r0_d7_p0": "agent_dump", "r0_d0_p7": "agent_p"}
-column_to_name_dict = {"agent_random": "r7_d0_p0", "agent_dump": "r0_d7_p0", "agent_p": "r0_d0_p7"}
-legend_name_dict = {"agent_random": "AgentR", "agent_dump": "AgentD", "agent_p": "AgentP"}
+name_to_column_dict = {
+    "r7_d0_p0": "agent_random",
+    "r0_d7_p0": "agent_dump",
+    "r0_d0_p7": "agent_p",
+}
+column_to_name_dict = {
+    "agent_random": "r7_d0_p0",
+    "agent_dump": "r0_d7_p0",
+    "agent_p": "r0_d0_p7",
+}
+legend_name_dict = {
+    "agent_random": "AgentR",
+    "agent_dump": "AgentD",
+    "agent_p": "AgentP",
+}
 
-pre_pooled_mean_dict = {"player_1": "red", "agent_random": "green", "agent_dump": "darkviolet", "agent_p": "blue"}
+pre_pooled_mean_dict = {
+    "player_1": "red",
+    "agent_random": "green",
+    "agent_dump": "darkviolet",
+    "agent_p": "blue",
+}
 
 model_list = []
 color_list = ["red", "green", "blue", "darkviolet"]
-color_dict = {"player_1": "red", "agent_random": "green", "agent_dump": "darkviolet", "agent_p": "blue"}
+color_dict = {
+    "player_1": "red",
+    "agent_random": "green",
+    "agent_dump": "darkviolet",
+    "agent_p": "blue",
+}
 
-DQN_pre_cash_dict = {"agent_random": [759.35, 51.35], "agent_dump": [185.13, 31.56], "agent_p": [586.05, 35.66]}
-BA_pre_cash_dict = {"agent_random": [119.88, 7.34], "agent_dump": [201.98, 4.50], "agent_p": [144.88, 4.81]}
+DQN_pre_cash_dict = {
+    "agent_random": [759.35, 51.35],
+    "agent_dump": [185.13, 31.56],
+    "agent_p": [586.05, 35.66],
+}
+BA_pre_cash_dict = {
+    "agent_random": [119.88, 7.34],
+    "agent_dump": [201.98, 4.50],
+    "agent_p": [144.88, 4.81],
+}
 
 for background_agent in ["agent_random", "agent_dump", "agent_p"]:
-
     player_1_pre_mean = []
     player_1_pre_std = []
 
@@ -142,22 +180,40 @@ for background_agent in ["agent_random", "agent_dump", "agent_p"]:
         player_1_post_ste.append(tem_df["post_player_1_cash_ste"].values[0])
 
         # background pre-novelty
-        background_pre_mean.append(tem_df["pre_" + background_agent + "_cash"].values[0])
-        background_pre_std.append(tem_df["pre_" + background_agent + "_cash_std"].values[0])
+        background_pre_mean.append(
+            tem_df["pre_" + background_agent + "_cash"].values[0]
+        )
+        background_pre_std.append(
+            tem_df["pre_" + background_agent + "_cash_std"].values[0]
+        )
 
         # get background post novelty
-        background_post_mean.append(tem_df["post_" + background_agent + "_cash"].values[0])
-        background_post_ste.append(tem_df["post_" + background_agent + "_cash_ste"].values[0])
+        background_post_mean.append(
+            tem_df["post_" + background_agent + "_cash"].values[0]
+        )
+        background_post_ste.append(
+            tem_df["post_" + background_agent + "_cash_ste"].values[0]
+        )
 
     player_1_pre_pooled_mean = np.mean(player_1_pre_mean)
     np_player_1_pre_std = np.array(player_1_pre_std)
-    player_1_pre_pooled_ste = (sum(np_player_1_pre_std * np_player_1_pre_std)) ** 0.5 / len(np_player_1_pre_std)
+    player_1_pre_pooled_ste = (
+        sum(np_player_1_pre_std * np_player_1_pre_std)
+    ) ** 0.5 / len(np_player_1_pre_std)
 
     background_pre_pooled_mean = np.mean(background_pre_mean)
     np_background_pre_std = np.array(background_pre_std)
-    background_pre_pooled_ste = (sum(np_background_pre_std * np_background_pre_std)) ** 0.5 / len(np_background_pre_std)
+    background_pre_pooled_ste = (
+        sum(np_background_pre_std * np_background_pre_std)
+    ) ** 0.5 / len(np_background_pre_std)
 
-    zipped = zip(player_1_post_nov, player_1_post_mean, player_1_post_ste, background_post_mean, background_post_ste)
+    zipped = zip(
+        player_1_post_nov,
+        player_1_post_mean,
+        player_1_post_ste,
+        background_post_mean,
+        background_post_ste,
+    )
     zipped_sort = sorted(zipped, reverse=True, key=lambda x: x[1])
     (
         player_1_post_nov_sort,
@@ -210,11 +266,41 @@ for background_agent in ["agent_random", "agent_dump", "agent_p"]:
     )
 
     # label
-    pre_circle = mlines.Line2D([], [], color="black", marker="o", linestyle="None", markersize=6, label="Pre")
-    post_cross = mlines.Line2D([], [], color="black", marker="x", linestyle="None", markersize=6, label="Post")
-    pre_square = mlines.Line2D([], [], color="black", marker="s", alpha=0.3, linestyle="None", markersize=6, label="Pre")
-    post_square = mlines.Line2D([], [], color="white", marker="s", alpha=0.3, linestyle="None", markersize=6, label="Post")
-    red_square = mlines.Line2D([], [], color="red", marker="s", linestyle="None", markersize=6, label="AgentDQN")
+    pre_circle = mlines.Line2D(
+        [], [], color="black", marker="o", linestyle="None", markersize=6, label="Pre"
+    )
+    post_cross = mlines.Line2D(
+        [], [], color="black", marker="x", linestyle="None", markersize=6, label="Post"
+    )
+    pre_square = mlines.Line2D(
+        [],
+        [],
+        color="black",
+        marker="s",
+        alpha=0.3,
+        linestyle="None",
+        markersize=6,
+        label="Pre",
+    )
+    post_square = mlines.Line2D(
+        [],
+        [],
+        color="white",
+        marker="s",
+        alpha=0.3,
+        linestyle="None",
+        markersize=6,
+        label="Post",
+    )
+    red_square = mlines.Line2D(
+        [],
+        [],
+        color="red",
+        marker="s",
+        linestyle="None",
+        markersize=6,
+        label="AgentDQN",
+    )
     background_square = mlines.Line2D(
         [],
         [],
