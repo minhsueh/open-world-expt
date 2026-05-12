@@ -161,7 +161,7 @@ class AgentDQNReplayFrame(OweAgent):
         # performance storage
         self.performance_his = (
             []
-        )  # boolean list indicating winning or losing in each tournament
+        )  # dictionary list of the performance in each tournament
 
     def _create_empty_dqn(self):
         opt = Adam(learning_rate=self.alpha)
@@ -656,9 +656,8 @@ class AgentDQNReplayFrame(OweAgent):
     def novelty_detection(self):
         return 0
 
-    def performance_recording(self, is_win: bool):
-        self.performance_his.append(is_win)
-        return 0
+    def performance_recording(self, performance: dict):
+        self.performance_his.append(performance)
 
 
 class ReplayMemory:

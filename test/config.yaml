@@ -14,7 +14,7 @@ background_agents_raw_list:
   - agent_type: "agent_dump"
     number_of_agent: 0
   - agent_type: "agent_random"
-    number_of_agent: 9
+    number_of_agent: 7
   - agent_type: "agent_dqn_4"
     number_of_agent: 0
 # --------general pokers rules--------
@@ -25,7 +25,7 @@ background_agents_raw_list:
 # buy_in_amount: 100
 # bankroll_limit: 1500
 # --------termination conditions--------
-# max_game_limitation: 999
+max_game_limitation: 30
 # max_time_limitation: 999
 # --------novelty list--------
 novelty_list:
@@ -44,22 +44,3 @@ novelty_list:
   #   param:
   #     amount: -100
    - novelty_name: action.GameFoldRestrict
-
-
-# --------general pokers rules--------
-# max_raise_count: 3
-# small_blind: 5
-# big_small_blind_ratio: 2 # big_blind = small_blind * big_small_blind_ratio
-# seed: 15
-# buy_in_amount: 100
-# bankroll_limit: 1500
-# --------termination conditions--------
-max_game_limitation: 30
-# max_time_limitation: 999
-# --------novelty list--------
-novelty_list:
-- novelty_name: action.GameFoldRestrict
-
-#  - CardDistLow
-#  - CardDistHigh
-#  - RANDOM

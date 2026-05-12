@@ -13,12 +13,13 @@ import numpy as np
 from gym_open_poker.envs.poker_util.action_choices import *
 from gym_open_poker.envs.poker_util.card_utility_actions import *
 from gym_open_poker.envs.poker_util.phase import *
-from agents import AgentDQNReplayFrame
+from agents import AgentDQNOWEReplayFrame
 import yaml
 import pandas as pd
 import os
 
-OUTPUT_FOLDER = "20260509_dqn_agent_testing_3/"
+# OUTPUT_FOLDER = "20260509_dqn_agent_testing_owe/"
+OUTPUT_FOLDER = "20260510_r0d0p7__dqn_agent_testing_owe_heuristic2_window10_GameFoldRestrict_r0_d0_p7/"
 OUTPUT_PATH = f"./agents/results/{OUTPUT_FOLDER}"
 # OUTPUT_FILE_NAME = "0306_expt_testing_sum.csv"
 TOTAL_TOURNAMENT = 100
@@ -33,18 +34,19 @@ if not os.path.exists(OUTPUT_PATH):
 def testing(
     config_dict,
     model_name,
+    post_model_name,
     folder_name=None,
     NN_count=None,
     N_count=None,
     random_seed=20,
     N_ratio=0.0,
 ):
-    owe_agent = AgentDQNReplayFrame()
+    owe_agent = AgentDQNOWEReplayFrame()
 
     owe_agent.initialize(
         learning=False,
         read_dqn_path=f"./agents/results/{model_name}.keras",
-        read_post_dqn_path=f"./agents/results/{model_name}_post_novelty.keras",
+        read_post_dqn_path=f"./agents/results/{post_model_name}.keras",
     )
 
     if NN_count is not None and N_count is not None:
@@ -80,6 +82,7 @@ def testing(
 
     owe.get_player_action_profile_summary()
     owe.get_player_action_percentage_profile_summary()
+    owe.get_novelty_detection_result()
 
     pre_post_cash_summary = owe.get_pre_post_model_summary("cash")
     pre_post_rank_summary = owe.get_pre_post_model_summary("rank")
@@ -133,6 +136,7 @@ def testing(
 
 def expt_summary(
     model,
+    post_model,
     agent_random_num,
     agent_dump_num,
     agent_p_num,
@@ -164,6 +168,7 @@ def expt_summary(
         output_dict, pre_post_dict = testing(
             config_dict,
             model,
+            post_model,
             folder_name=folder_name,
             NN_count=NN_count,
             N_count=N_count,
@@ -173,16 +178,27 @@ def expt_summary(
         output_dict, pre_post_dict = testing(
             config_dict,
             model,
+            post_model,
             folder_name=folder_name,
             NN_count=TOTAL_TOURNAMENT,
             N_count=0,
             N_ratio=0,
         )
     output_dict.update(
-        {"model": model, "backgound_agent_list": param, "novelty": novelty_name}
+        {
+            "model": model,
+            "post_model": post_model,
+            "backgound_agent_list": param,
+            "novelty": novelty_name,
+        }
     )
     pre_post_dict.update(
-        {"model": model, "backgound_agent_list": param, "novelty": novelty_name}
+        {
+            "model": model,
+            "post_model": post_model,
+            "backgound_agent_list": param,
+            "novelty": novelty_name,
+        }
     )
     for item in output_dict:
         output_dict[item] = [output_dict[item]]
@@ -236,12 +252,19 @@ def main():
     """
     novelty_name = "action.GameFoldRestrict"
     seed = 20
-    for model in ["0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9"]:
+    # for model in ["0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9"]:
+    # for model in ["20260509_post_r0_d0_p9_T500_replay_frame_lr0.0001_delta0.9"]:
+    for model, post_model in [
+        [
+            "0517_r0_d0_p9_T300_replay_frame_lr0.0001_delta0.9",
+            "20260510_GameFoldRestrict_post_r0_d0_p7_T500_replay_frame_lr0.0001_delta0.9",
+        ]
+    ]:
         # for agent_random_num, agent_dump_num, agent_p_num in [(1, 0, 0), (0, 1, 0), (0, 0, 1)]:
         for agent_random_num, agent_dump_num, agent_p_num in [
-            (9, 0, 0),
-            (0, 9, 0),
-            (0, 0, 9),
+            # (7, 0, 0),
+            # (0, 7, 0),
+            (0, 0, 7),
         ]:
             """
             for agent_random_num, agent_dump_num, agent_p_num in [
@@ -260,6 +283,7 @@ def main():
             output_file_name = f"{model}_{novelty_name}_seed{seed}.csv"
             expt_summary(
                 model,
+                post_model,
                 agent_random_num,
                 agent_dump_num,
                 agent_p_num,

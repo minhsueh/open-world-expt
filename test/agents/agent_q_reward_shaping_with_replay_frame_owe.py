@@ -87,7 +87,7 @@ class LossHistory(Callback):
         self.losses.append(logs.get("loss"))
 
 
-class AgentDQNReplayFrame(OweAgent):
+class AgentDQNOWEReplayFrame(OweAgent):
     def __init__(
         self,
         epsilon=0.05,
@@ -98,7 +98,7 @@ class AgentDQNReplayFrame(OweAgent):
         delta=0.1,  # reward assignment factor
         random_seed=5,
         storing_folder_name=None,
-        heuristic_novelty_detection_window=3,  # the window size for heuristic novelty detection, if the performance in this window is all 0, then we consider it as novelty
+        heuristic_novelty_detection_window=10,  # the window size for heuristic novelty detection, if the performance in this window is all 0, then we consider it as novelty
     ):
         self.random_seed = random_seed
         self.initialized = False
@@ -162,7 +162,7 @@ class AgentDQNReplayFrame(OweAgent):
         # performance storage
         self.performance_his = (
             []
-        )  # boolean list indicating winning or losing in each tournament
+        )  # dictionary list of the performance in each tournament
 
         # novelty detection
         self.novelty_detected = False  # boolean value indicating whether novelty is detected in current tournament
@@ -666,20 +666,37 @@ class AgentDQNReplayFrame(OweAgent):
         )
 
     def novelty_detection(self):
+        """
+        # heuristic 1: if agent loses all tournaments in the window,
+        # consider novelty injected and switch to post-dqn
         if len(self.performance_his) < self.heuristic_novelty_detection_window:
-            return 0
-        elif sum(self.performance_his[-self.heuristic_novelty_detection_window :]) == 0:
+            return False
+
+        window = self.performance_his[-self.heuristic_novelty_detection_window:]
+        win_count = sum(p["is_first_place"] for p in window)
+        if win_count == 0:
             self.novelty_detected = True
-            return 1
-        return 0
+        return self.novelty_detected
+        """
+        # heuristic 2: if agent's cash in current tournament is lower than the cash in the <heuristic_novelty_detection_window> tournaments,
+        # then consider novelty injected and switch to post-dqn
+        if len(self.performance_his) <= self.heuristic_novelty_detection_window:
+            return False
+
+        window = self.performance_his[-self.heuristic_novelty_detection_window :]
+        avg_cash = sum(p["bankroll"] for p in window) / len(window)
+        current_cash = self.performance_his[-1]["bankroll"]
+
+        if current_cash < avg_cash:
+            self.novelty_detected = True
+        return self.novelty_detected
 
     @property
     def get_novelty_detected(self):
         return self.novelty_detected
 
-    def performance_recording(self, is_win: bool):
-        self.performance_his.append(is_win)
-        return 0
+    def performance_recording(self, performance: dict):
+        self.performance_his.append(performance)
 
 
 class ReplayMemory:

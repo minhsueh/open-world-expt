@@ -204,10 +204,18 @@ class OpenWorldExpt:
                 # print(info)
                 if truncated or terminated:
                     # record the performance for current tournament
-                    if observation["player_status"][observation["position"][1]] == 1:
-                        self.owe_agent.performance_his.performance_recording(1)
+                    rank = observation["player_status"][observation["position"][1]]
+                    bankroll = observation["bankroll"][observation["position"][1]]
+                    if rank == 1:
+                        is_first_place = True
                     else:
-                        self.owe_agent.performance_his.performance_recording(0)
+                        is_first_place = False
+                    preformance_dict = {
+                        "rank": rank,
+                        "bankroll": bankroll,
+                        "is_first_place": is_first_place,
+                    }
+                    self.owe_agent.performance_recording(preformance_dict)
                     break
 
             # novelty detection
@@ -329,6 +337,25 @@ class OpenWorldExpt:
 
             output_plot = df.plot(marker="o")
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             plt.xticks(range(1, max_game_num + 1))
             plt.xlabel("Game number")
             plt.ylabel("Player's Cash")
@@ -955,6 +982,25 @@ class OpenWorldExpt:
 
         return (tp, tn, fp, fn)
 
+    def get_novelty_detection_result(self):
+        if not self.executed:
+            raise RuntimeError(
+                "OpenWorldExpt has not executed yet, please call execute() first"
+            )
+
+        df = pd.DataFrame(
+            {
+                "tournament_idx": range(self.NN_count + self.N_count),
+                "novelty_gt": self.novelty_gt_list,
+                "novelty_detected": self.novelty_detection_list,
+            }
+        )
+
+        output_file = os.path.join(self.output_path, "novelty_detection_result.csv")
+        df.to_csv(output_file, index=False)
+
+        return df
+
     def get_player_action_profile_summary(self):
         """
         get agent's action count.
@@ -1122,6 +1168,26 @@ class OpenWorldExpt:
                     fmt="o",
                 )
             plt.grid()
+            # get novelty detection
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
@@ -1353,6 +1419,25 @@ class OpenWorldExpt:
                     fmt="o",
                 )
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
@@ -1374,6 +1459,25 @@ class OpenWorldExpt:
 
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
             plt.xlim(-5, total_tournament_count + 5)
@@ -1549,7 +1653,10 @@ class OpenWorldExpt:
         df.to_csv(self.output_path + "pre_post_" + measurement + ".csv")
         # aggregation
 
-        self.NN_count = 20
+        try:
+            novelty_detected_idx = self.novelty_detection_list.index(True)
+        except ValueError:
+            novelty_detected_idx = None
         """
         retrun_dict = dict()
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
@@ -1570,6 +1677,10 @@ class OpenWorldExpt:
             retrun_dict["pre_" + model + "_" + measurement] = np.mean(
                 df["pre_" + model][: self.NN_count]
             )
+            if novelty_detected_idx:
+                retrun_dict["pre_nd_" + model + "_" + measurement] = np.mean(
+                    df["pre_" + model][:novelty_detected_idx]
+                )
             if model == "player_1":
                 retrun_dict["pre_" + model + "_" + measurement + "_std"] = np.std(
                     df["pre_" + model][: self.NN_count], ddof=1
@@ -1577,6 +1688,17 @@ class OpenWorldExpt:
                 retrun_dict["pre_" + model + "_" + measurement + "_ste"] = np.std(
                     df["pre_" + model][: self.NN_count], ddof=1
                 ) / np.sqrt(np.size(df["pre_" + model][: self.NN_count]))
+                if novelty_detected_idx:
+                    retrun_dict[
+                        "pre_nd_" + model + "_" + measurement + "_std"
+                    ] = np.std(df["pre_" + model][:novelty_detected_idx], ddof=1)
+                    retrun_dict[
+                        "pre_nd_" + model + "_" + measurement + "_ste"
+                    ] = np.std(
+                        df["pre_" + model][:novelty_detected_idx], ddof=1
+                    ) / np.sqrt(
+                        np.size(df["pre_" + model][:novelty_detected_idx])
+                    )
             else:
                 tem_std = np.array(df["pre_" + model + "_std"][: self.NN_count])
                 retrun_dict["pre_" + model + "_" + measurement + "_std"] = (
@@ -1589,6 +1711,10 @@ class OpenWorldExpt:
             retrun_dict["post_" + model + "_" + measurement] = np.mean(
                 df["post_" + model][self.NN_count :]
             )
+            if novelty_detected_idx:
+                retrun_dict["post_nd_" + model + "_" + measurement] = np.mean(
+                    df["post_" + model][novelty_detected_idx:]
+                )
             if model == "player_1":
                 retrun_dict["post_" + model + "_" + measurement + "_std"] = np.std(
                     df["post_" + model][self.NN_count :], ddof=1
@@ -1596,6 +1722,17 @@ class OpenWorldExpt:
                 retrun_dict["post_" + model + "_" + measurement + "_ste"] = np.std(
                     df["post_" + model][self.NN_count :], ddof=1
                 ) / np.sqrt(np.size(df["post_" + model][self.NN_count :]))
+                if novelty_detected_idx:
+                    retrun_dict[
+                        "post_nd_" + model + "_" + measurement + "_std"
+                    ] = np.std(df["post_" + model][novelty_detected_idx:], ddof=1)
+                    retrun_dict[
+                        "post_nd_" + model + "_" + measurement + "_ste"
+                    ] = np.std(
+                        df["post_" + model][novelty_detected_idx:], ddof=1
+                    ) / np.sqrt(
+                        np.size(df["post_" + model][novelty_detected_idx:])
+                    )
             else:
                 tem_std = np.array(df["post_" + model + "_std"][self.NN_count :])
                 retrun_dict["post_" + model + "_" + measurement + "_std"] = (
