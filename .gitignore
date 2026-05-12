@@ -2,3 +2,8 @@ open_world_expt.egg-info/
 public_env/
 .DS_Store
 .env/
+__pycache__/
+*.pyc
+.venv/
+.python-version
+test/*/*

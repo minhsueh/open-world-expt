@@ -14,7 +14,7 @@ background_agents_raw_list:
   - agent_type: "agent_dump"
     number_of_agent: 0
   - agent_type: "agent_random"
-    number_of_agent: 9
+    number_of_agent: 7
   - agent_type: "agent_dqn_4"
     number_of_agent: 0
 # --------general pokers rules--------
@@ -29,6 +29,18 @@ max_game_limitation: 30
 # max_time_limitation: 999
 # --------novelty list--------
 novelty_list:
-#  - CardDistLow
-#  - CardDistHigh
-#  - RANDOM
+  # - novelty_name: card.CardDistHigh
+  # - novelty_name: card.CardDistLow
+  # - novelty_name: card.CardDistSuit
+  #    param:
+  #      prohibit_suit: "diamond"
+  # - novelty_name: card.CardDistOdd
+  #   param:
+  #    prohibit_parity: "odd"
+  # - novelty_name: card.CardDistColor
+  #  param:
+  #    prohibit_color: "red"
+  # - novelty_name: conclude_game.Incentive
+  #   param:
+  #     amount: -100
+   - novelty_name: action.GameFoldRestrict

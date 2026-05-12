@@ -1,5 +1,5 @@
 """
-This module is one level higher than open_poker; in other words, we utilize open_poker to test the AI agent's novelty detection and accommodation. 
+This module is one level higher than open_poker; in other words, we utilize open_poker to test the AI agent's novelty detection and accommodation.
 
 Specifically, this experiment has two portions, including first non_novle(NN), and followed by novel(N) tournaments. Note that each
 tournament call open_poker once, where novel tournaments utilize wrapper to inject novelty.
@@ -23,7 +23,6 @@ N_ratio(float), this value is bounded between 0 to 1. default = 0.6
 """
 
 import gym
-import gym_open_poker
 from gym_open_poker.envs.poker_util.novelty_generator import NoveltyGenerator
 import yaml
 import random
@@ -36,7 +35,6 @@ from matplotlib.ticker import MaxNLocator
 import collections
 import scipy
 import json
-import importlib
 
 
 try:
@@ -98,7 +96,9 @@ class OpenWorldExpt:
             from . import default_setting
 
             try:
-                deafault_file = impresources.files(default_setting) / "default_config.yaml"
+                deafault_file = (
+                    impresources.files(default_setting) / "default_config.yaml"
+                )
                 with open(deafault_file, "r") as stream:
                     try:
                         config_dict = yaml.safe_load(stream)
@@ -108,7 +108,7 @@ class OpenWorldExpt:
                 print("Please check Python version >= 3.7")
                 raise
 
-        novelty_list = config_dict["novelty_list"]
+        config_dict["novelty_list"]
 
         if folder_name:
             self.folder_name = folder_name
@@ -129,15 +129,23 @@ class OpenWorldExpt:
 
         # novelty_gt_list
         novel_tournament_count = int(self.N_ratio * self.N_count)
-        NN_novelty_inject_list = [1] * novel_tournament_count + [0] * (self.N_count - novel_tournament_count)
+        NN_novelty_inject_list = [1] * novel_tournament_count + [0] * (
+            self.N_count - novel_tournament_count
+        )
         random.shuffle(NN_novelty_inject_list)
         self.novelty_gt_list = [0] * self.NN_count + NN_novelty_inject_list
         print(self.novelty_gt_list)
         ##
         for tournament_idx in range(self.NN_count + self.N_count):
-            print("tournament " + str(tournament_idx + 1))
+            # random seed for each tournament
+            seed = rand_seed_list[tournament_idx]
+            config_dict["seed"] = seed
+
+            print(f"tournament {tournament_idx+1} with seed {seed}")
             # modify log_file_path in config_dict to ./timestamp/tournamentX.log
-            config_dict["log_file_path"] = self.output_path + "/tournament" + str(tournament_idx + 1) + ".log"
+            config_dict["log_file_path"] = (
+                self.output_path + "/tournament" + str(tournament_idx + 1) + ".log"
+            )
             if self.novelty_gt_list[tournament_idx] == 1:
                 self.env = gym.make("gym_open_poker/OpenPoker-v0", **config_dict)
                 ng = NoveltyGenerator()
@@ -156,7 +164,7 @@ class OpenWorldExpt:
             else:
                 self.env = gym.make("gym_open_poker/OpenPoker-v0", **config_dict)
 
-            observation, info = self.env.reset(seed=rand_seed_list[tournament_idx])
+            observation, info = self.env.reset()
             reward, terminated, truncated = 0, False, False
             # print('============================')
             # print('---observation---')
@@ -167,7 +175,7 @@ class OpenWorldExpt:
                 # print('============================')
                 # print('Enter your action:')
 
-                # keyborad
+                # keyboard
                 # user_action = input()
 
                 # random
@@ -177,13 +185,17 @@ class OpenWorldExpt:
 
                 # OweAgent
 
-                user_action = self.owe_agent.action(observation, reward, terminated, truncated, info)
+                user_action = self.owe_agent.action(
+                    observation, reward, terminated, truncated, info
+                )
 
                 if int(user_action) not in range(6):
                     print("It is not a valid action, current value = " + user_action)
                     continue
                 # print('----------------')
-                observation, reward, terminated, truncated, info = self.env.step(int(user_action))
+                observation, reward, terminated, truncated, info = self.env.step(
+                    int(user_action)
+                )
                 # print('---observation---')
                 # print(observation)
                 # print('---reward---')
@@ -191,7 +203,19 @@ class OpenWorldExpt:
                 # print('---info---')
                 # print(info)
                 if truncated or terminated:
-                    # self.owe_agent.action(observation, reward, terminated, truncated, info) # for rl agent final observation
+                    # record the performance for current tournament
+                    rank = observation["player_status"][observation["position"][1]]
+                    bankroll = observation["bankroll"][observation["position"][1]]
+                    if rank == 1:
+                        is_first_place = True
+                    else:
+                        is_first_place = False
+                    preformance_dict = {
+                        "rank": rank,
+                        "bankroll": bankroll,
+                        "is_first_place": is_first_place,
+                    }
+                    self.owe_agent.performance_recording(preformance_dict)
                     break
 
             # novelty detection
@@ -244,7 +268,8 @@ class OpenWorldExpt:
         assert output_format in ["percentage", "count"]
 
         tp, tn, fp, fn = self._get_confusion_matrix(
-            self.novelty_gt_list[self.NN_count :], self.novelty_detection_list[self.NN_count :]
+            self.novelty_gt_list[self.NN_count :],
+            self.novelty_detection_list[self.NN_count :],
         )
 
         leng = len(self.novelty_gt_list[self.NN_count :])
@@ -285,34 +310,61 @@ class OpenWorldExpt:
             df = pd.DataFrame(
                 np.nan,
                 index=list(range(max_game_num + 1)),
-                columns=["player_" + str(player_idx) for player_idx in range(1, player_num + 1)],
+                columns=[
+                    "player_" + str(player_idx)
+                    for player_idx in range(1, player_num + 1)
+                ],
             )
             agent_string_map = {"agent_random": "r", "agent_dump": "d", "agent_p": "p"}
 
             # cash
             for game_idx in range(max_game_num + 1):
-
                 game_cash_summary = tournament_summary["cash"][game_idx]
                 for player_idx in range(player_num):
-                    df.loc[game_idx]["player_" + str(player_idx + 1)] = game_cash_summary[player_idx]
+                    df.loc[game_idx][
+                        "player_" + str(player_idx + 1)
+                    ] = game_cash_summary[player_idx]
 
             new_column_list = []
             for player_idx in range(player_num):
                 if player_idx == 0:
                     new_column_list.append(f"p{player_idx+1}(dqn)")
                 else:
-                    new_column_list.append(f"p{player_idx+1}({agent_string_map[game_agent_list[player_idx]]})")
+                    new_column_list.append(
+                        f"p{player_idx+1}({agent_string_map[game_agent_list[player_idx]]})"
+                    )
             df.columns = new_column_list
 
             output_plot = df.plot(marker="o")
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             plt.xticks(range(1, max_game_num + 1))
             plt.xlabel("Game number")
             plt.ylabel("Player's Cash")
             output_plot.xaxis.set_major_locator(MaxNLocator(integer=True))
             plt.legend(loc="center left", bbox_to_anchor=(1, 0.5))
             plt.tight_layout()
-            output_plot.figure.savefig(self.output_path + str(tournament_idx + 1) + ".png")
+            output_plot.figure.savefig(
+                self.output_path + str(tournament_idx + 1) + ".png"
+            )
             plt.clf()
             plt.close()
 
@@ -357,7 +409,13 @@ class OpenWorldExpt:
         }
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["cash"].keys())
@@ -379,11 +437,20 @@ class OpenWorldExpt:
                         tem_dict["others"].append(tem_dict[agent][-1])
 
             # aggregate:
-            for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
+            for model in [
+                "player_1",
+                "agent_random",
+                "agent_dump",
+                "agent_p",
+                "others",
+            ]:
                 out_dict[model].append(np.mean(tem_dict[model]))
                 if model != "player_1":
                     out_dict[model + "_std"].append(np.std(tem_dict[model]))
-                    out_dict[model + "_ste"].append(np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])))
+                    out_dict[model + "_ste"].append(
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                    )
 
         data_x = range(1, len(out_dict["player_1"]) + 1)
         out_dict["T"] = data_x
@@ -395,11 +462,15 @@ class OpenWorldExpt:
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
             retrun_dict[model + "_win_rate"] = np.mean(df[model])
             retrun_dict[model + "_win_rate_std"] = np.std(df[model])
-            retrun_dict[model + "_win_rate_ste"] = np.std(df[model], ddof=1) / np.sqrt(np.size(df[model]))
+            retrun_dict[model + "_win_rate_ste"] = np.std(df[model], ddof=1) / np.sqrt(
+                np.size(df[model])
+            )
 
         # hypothesis testing
         for model in ["agent_random", "agent_dump", "agent_p", "others"]:
-            statistic, p_value = scipy.stats.ttest_ind(df["player_1"], df[model], alternative="greater")
+            statistic, p_value = scipy.stats.ttest_ind(
+                df["player_1"], df[model], alternative="greater"
+            )
             alpha = 0.05  # Set your significance level
             if p_value < alpha:
                 retrun_dict["win_rate_significant_than_" + model] = "*"
@@ -409,18 +480,31 @@ class OpenWorldExpt:
         # plotting
         color_list = ["red", "green", "blue", "darkviolet"]
         model_list = ["player_1", "agent_random", "agent_dump", "agent_p"]
-        label_map = {"player_1": "dqn", "agent_random": "model_random", "agent_dump": "model_dump", "agent_p": "model_p"}
+        label_map = {
+            "player_1": "dqn",
+            "agent_random": "model_random",
+            "agent_dump": "model_dump",
+            "agent_p": "model_p",
+        }
         figure, ax = plt.subplots()
         for model, color in zip(model_list, color_list):
             if model == "player_1":
-                ax.plot(df["T"], df[model], c=color, label=label_map[model], marker="x", ls="None")
+                ax.plot(
+                    df["T"],
+                    df[model],
+                    c=color,
+                    label=label_map[model],
+                    marker="x",
+                    ls="None",
+                )
             elif not df[model].isnull().values.any():
                 markers, caps, bars = ax.errorbar(
                     df["T"],
                     df[model],
                     df[model + "_ste"],
                     c=color,
-                    label=label_map[model] + retrun_dict["win_rate_significant_than_" + model],
+                    label=label_map[model]
+                    + retrun_dict["win_rate_significant_than_" + model],
                     capsize=5,
                     fmt="o",
                 )
@@ -468,7 +552,13 @@ class OpenWorldExpt:
         }
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["cash"].keys())
             player_num = len(tournament_summary["cash"][0])
@@ -485,11 +575,20 @@ class OpenWorldExpt:
                         tem_dict["others"].append(game_cash_summary[player_idx])
 
             # aggregate:
-            for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
+            for model in [
+                "player_1",
+                "agent_random",
+                "agent_dump",
+                "agent_p",
+                "others",
+            ]:
                 out_dict[model].append(np.mean(tem_dict[model]))
                 if model != "player_1":
                     out_dict[model + "_std"].append(np.std(tem_dict[model]))
-                    out_dict[model + "_ste"].append(np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])))
+                    out_dict[model + "_ste"].append(
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                    )
 
         data_x = range(1, len(out_dict["player_1"]) + 1)
         out_dict["T"] = data_x
@@ -501,11 +600,15 @@ class OpenWorldExpt:
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
             retrun_dict[model + "_cash"] = np.mean(df[model])
             retrun_dict[model + "_cash_std"] = np.std(df[model])
-            retrun_dict[model + "_cash_ste"] = np.std(df[model], ddof=1) / np.sqrt(np.size(df[model]))
+            retrun_dict[model + "_cash_ste"] = np.std(df[model], ddof=1) / np.sqrt(
+                np.size(df[model])
+            )
 
         # hypothesis testing
         for model in ["agent_random", "agent_dump", "agent_p", "others"]:
-            statistic, p_value = scipy.stats.ttest_ind(df["player_1"], df[model], alternative="greater")
+            statistic, p_value = scipy.stats.ttest_ind(
+                df["player_1"], df[model], alternative="greater"
+            )
             alpha = 0.05  # Set your significance level
             if p_value < alpha:
                 retrun_dict["cash_significant_than_" + model] = "*"
@@ -515,18 +618,31 @@ class OpenWorldExpt:
         # plotting
         color_list = ["red", "green", "blue", "darkviolet"]
         model_list = ["player_1", "agent_random", "agent_dump", "agent_p"]
-        label_map = {"player_1": "dqn", "agent_random": "model_random", "agent_dump": "model_dump", "agent_p": "model_p"}
+        label_map = {
+            "player_1": "dqn",
+            "agent_random": "model_random",
+            "agent_dump": "model_dump",
+            "agent_p": "model_p",
+        }
         figure, ax = plt.subplots()
         for model, color in zip(model_list, color_list):
             if model == "player_1":
-                ax.plot(df["T"], df[model], c=color, label=label_map[model], marker="x", ls="None")
+                ax.plot(
+                    df["T"],
+                    df[model],
+                    c=color,
+                    label=label_map[model],
+                    marker="x",
+                    ls="None",
+                )
             elif not df[model].isnull().values.any():
                 markers, caps, bars = ax.errorbar(
                     df["T"],
                     df[model],
                     df[model + "_ste"],
                     c=color,
-                    label=label_map[model] + retrun_dict["cash_significant_than_" + model],
+                    label=label_map[model]
+                    + retrun_dict["cash_significant_than_" + model],
                     capsize=5,
                     fmt="o",
                 )
@@ -574,7 +690,13 @@ class OpenWorldExpt:
         }
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["rank"].keys())
@@ -591,11 +713,20 @@ class OpenWorldExpt:
                         tem_dict["others"].append(game_rank_summary[player_idx])
 
             # aggregate:
-            for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
+            for model in [
+                "player_1",
+                "agent_random",
+                "agent_dump",
+                "agent_p",
+                "others",
+            ]:
                 out_dict[model].append(np.mean(tem_dict[model]))
                 if model != "player_1":
                     out_dict[model + "_std"].append(np.std(tem_dict[model]))
-                    out_dict[model + "_ste"].append(np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])))
+                    out_dict[model + "_ste"].append(
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                    )
 
         data_x = range(1, len(out_dict["player_1"]) + 1)
         out_dict["T"] = data_x
@@ -607,11 +738,15 @@ class OpenWorldExpt:
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
             retrun_dict[model + "_rank"] = np.mean(df[model])
             retrun_dict[model + "_rank_std"] = np.std(df[model])
-            retrun_dict[model + "_rank_ste"] = np.std(df[model], ddof=1) / np.sqrt(np.size(df[model]))
+            retrun_dict[model + "_rank_ste"] = np.std(df[model], ddof=1) / np.sqrt(
+                np.size(df[model])
+            )
 
         # hypothesis testing
         for model in ["agent_random", "agent_dump", "agent_p", "others"]:
-            statistic, p_value = scipy.stats.ttest_ind(df["player_1"], df[model], alternative="greater")
+            statistic, p_value = scipy.stats.ttest_ind(
+                df["player_1"], df[model], alternative="greater"
+            )
             alpha = 0.05  # Set your significance level
             if p_value < alpha:
                 retrun_dict["rank_significant_than_" + model] = "*"
@@ -621,18 +756,31 @@ class OpenWorldExpt:
         # plotting
         color_list = ["red", "green", "blue", "darkviolet"]
         model_list = ["player_1", "agent_random", "agent_dump", "agent_p"]
-        label_map = {"player_1": "dqn", "agent_random": "model_random", "agent_dump": "model_dump", "agent_p": "model_p"}
+        label_map = {
+            "player_1": "dqn",
+            "agent_random": "model_random",
+            "agent_dump": "model_dump",
+            "agent_p": "model_p",
+        }
         figure, ax = plt.subplots()
         for model, color in zip(model_list, color_list):
             if model == "player_1":
-                ax.plot(df["T"], df[model], c=color, label=label_map[model], marker="x", ls="None")
+                ax.plot(
+                    df["T"],
+                    df[model],
+                    c=color,
+                    label=label_map[model],
+                    marker="x",
+                    ls="None",
+                )
             elif not df[model].isnull().values.any():
                 markers, caps, bars = ax.errorbar(
                     df["T"],
                     df[model],
                     df[model + "_ste"],
                     c=color,
-                    label=label_map[model] + retrun_dict["rank_significant_than_" + model],
+                    label=label_map[model]
+                    + retrun_dict["rank_significant_than_" + model],
                     capsize=5,
                     fmt="o",
                 )
@@ -685,7 +833,13 @@ class OpenWorldExpt:
         }
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["cash"].keys())
@@ -710,14 +864,26 @@ class OpenWorldExpt:
                 if agent in tem_dict:
                     tem_dict[agent].append(win_counter[game_cash_summary[player_idx]])
                     if player_idx != 0:
-                        tem_dict["others"].append(win_counter[game_cash_summary[player_idx]])
+                        tem_dict["others"].append(
+                            win_counter[game_cash_summary[player_idx]]
+                        )
 
             # aggregate:
-            for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
+            for model in [
+                "player_1",
+                "agent_random",
+                "agent_dump",
+                "agent_p",
+                "others",
+            ]:
                 out_dict[model].append(np.mean(tem_dict[model]) * 100)
                 if model != "player_1":
                     out_dict[model + "_std"].append(np.std(tem_dict[model]) * 100)
-                    out_dict[model + "_ste"].append(np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])) * 100)
+                    out_dict[model + "_ste"].append(
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                        * 100
+                    )
 
         data_x = range(1, len(out_dict["player_1"]) + 1)
         out_dict["T"] = data_x
@@ -729,11 +895,15 @@ class OpenWorldExpt:
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
             retrun_dict[model + "_winning_percentage"] = np.mean(df[model])
             retrun_dict[model + "_winning_percentage_std"] = np.std(df[model])
-            retrun_dict[model + "_winning_percentage_ste"] = np.std(df[model], ddof=1) / np.sqrt(np.size(df[model]))
+            retrun_dict[model + "_winning_percentage_ste"] = np.std(
+                df[model], ddof=1
+            ) / np.sqrt(np.size(df[model]))
 
         # hypothesis testing
         for model in ["agent_random", "agent_dump", "agent_p", "others"]:
-            statistic, p_value = scipy.stats.ttest_ind(df["player_1"], df[model], alternative="greater")
+            statistic, p_value = scipy.stats.ttest_ind(
+                df["player_1"], df[model], alternative="greater"
+            )
             alpha = 0.05  # Set your significance level
             if p_value < alpha:
                 retrun_dict["winning_percentage_significant_than_" + model] = "*"
@@ -743,18 +913,31 @@ class OpenWorldExpt:
         # plotting
         color_list = ["red", "green", "blue", "darkviolet"]
         model_list = ["player_1", "agent_random", "agent_dump", "agent_p"]
-        label_map = {"player_1": "dqn", "agent_random": "model_random", "agent_dump": "model_dump", "agent_p": "model_p"}
+        label_map = {
+            "player_1": "dqn",
+            "agent_random": "model_random",
+            "agent_dump": "model_dump",
+            "agent_p": "model_p",
+        }
         figure, ax = plt.subplots()
         for model, color in zip(model_list, color_list):
             if model == "player_1":
-                ax.plot(df["T"], df[model], c=color, label=label_map[model], marker="x", ls="None")
+                ax.plot(
+                    df["T"],
+                    df[model],
+                    c=color,
+                    label=label_map[model],
+                    marker="x",
+                    ls="None",
+                )
             elif not df[model].isnull().values.any():
                 markers, caps, bars = ax.errorbar(
                     df["T"],
                     df[model],
                     df[model + "_ste"],
                     c=color,
-                    label=label_map[model] + retrun_dict["winning_percentage_significant_than_" + model],
+                    label=label_map[model]
+                    + retrun_dict["winning_percentage_significant_than_" + model],
                     capsize=5,
                     fmt="o",
                 )
@@ -798,6 +981,25 @@ class OpenWorldExpt:
                 raise
 
         return (tp, tn, fp, fn)
+
+    def get_novelty_detection_result(self):
+        if not self.executed:
+            raise RuntimeError(
+                "OpenWorldExpt has not executed yet, please call execute() first"
+            )
+
+        df = pd.DataFrame(
+            {
+                "tournament_idx": range(self.NN_count + self.N_count),
+                "novelty_gt": self.novelty_gt_list,
+                "novelty_detected": self.novelty_detection_list,
+            }
+        )
+
+        output_file = os.path.join(self.output_path, "novelty_detection_result.csv")
+        df.to_csv(output_file, index=False)
+
+        return df
 
     def get_player_action_profile_summary(self):
         """
@@ -852,12 +1054,22 @@ class OpenWorldExpt:
         overall_dict = None
 
         action_list = ["FOLD", "CHECK", "CALL", "BET", "RAISE_BET", "ALL_IN"]
-        model_abbreviation_dict = {"player_1": "dqn", "agent_random": "r", "agent_dump": "d", "agent_p": "p"}
-        action_count_dict = dict()
+        model_abbreviation_dict = {
+            "player_1": "dqn",
+            "agent_random": "r",
+            "agent_dump": "d",
+            "agent_p": "p",
+        }
         total_tournament_count = len(self.tournament_hist)
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["rank"].keys())
@@ -872,7 +1084,9 @@ class OpenWorldExpt:
                 for a in action_list:
                     tem_dict["player_" + str(player_idx)][a] = [0] * max_game_num
             for player_idx in range(1, player_num + 1):
-                tem_dict["player_" + str(player_idx)]["model"] = game_agent_list[player_idx - 1]
+                tem_dict["player_" + str(player_idx)]["model"] = game_agent_list[
+                    player_idx - 1
+                ]
 
             action_history = tournament_summary["action_history"]
             max_game_num = max(tournament_summary["action_history"].keys())
@@ -913,14 +1127,18 @@ class OpenWorldExpt:
                 max_game_num = max(tournament_summary["cash"].keys())
                 game_cash_summary = tournament_summary["cash"][max_game_num]
 
-                aggregate_dict[player_name + "_cash"].append(game_cash_summary[player_idx - 1])
+                aggregate_dict[player_name + "_cash"].append(
+                    game_cash_summary[player_idx - 1]
+                )
 
             # action
             for a in action_list:
                 aggregate_dict[player_name + "_" + a + "_mean"] = []
                 aggregate_dict[player_name + "_" + a + "_ste"] = []
                 aggregate_dict[player_name + "_" + a + "_sample_size"] = []
-                for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
+                for tournament_idx, tournament_summary in enumerate(
+                    self.tournament_hist
+                ):
                     aggregate_dict[player_name + "_" + a + "_mean"].append(
                         np.mean(output_dict[tournament_idx][player_name][a])
                     )
@@ -950,6 +1168,26 @@ class OpenWorldExpt:
                     fmt="o",
                 )
             plt.grid()
+            # get novelty detection
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
@@ -1035,8 +1273,12 @@ class OpenWorldExpt:
         overall_dict = None
 
         action_list = ["FOLD", "CHECK", "CALL", "BET", "RAISE_BET", "ALL_IN"]
-        model_abbreviation_dict = {"player_1": "dqn", "agent_random": "r", "agent_dump": "d", "agent_p": "p"}
-        action_count_dict = dict()
+        model_abbreviation_dict = {
+            "player_1": "dqn",
+            "agent_random": "r",
+            "agent_dump": "d",
+            "agent_p": "p",
+        }
         total_tournament_count = len(self.tournament_hist)
         # count the action from raw data
         """
@@ -1050,7 +1292,13 @@ class OpenWorldExpt:
         }
         """
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             # we only care about the last game in each tournament
             max_game_num = max(tournament_summary["rank"].keys())
@@ -1070,7 +1318,9 @@ class OpenWorldExpt:
                 for a in action_list:
                     tem_dict["player_" + str(player_idx)][a] = [0] * max_game_num
             for player_idx in range(1, player_num + 1):
-                tem_dict["player_" + str(player_idx)]["model"] = game_agent_list[player_idx - 1]
+                tem_dict["player_" + str(player_idx)]["model"] = game_agent_list[
+                    player_idx - 1
+                ]
 
             action_history = tournament_summary["action_history"]
             max_game_num = max(tournament_summary["action_history"].keys())
@@ -1099,7 +1349,9 @@ class OpenWorldExpt:
             for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
                 max_game_num = max(tournament_summary["cash"].keys())
                 game_cash_summary = tournament_summary["cash"][max_game_num]
-                aggregate_dict[player_name + "_cash"].append(game_cash_summary[player_idx - 1])
+                aggregate_dict[player_name + "_cash"].append(
+                    game_cash_summary[player_idx - 1]
+                )
 
                 # tem_action_count
                 tem_action_count_list = []
@@ -1107,7 +1359,9 @@ class OpenWorldExpt:
                 for game_idx in range(len(output_dict[tournament_idx][player_name][a])):
                     tem_action_count = 0
                     for a in action_list:
-                        tem_action_count += output_dict[tournament_idx][player_name][a][game_idx]
+                        tem_action_count += output_dict[tournament_idx][player_name][a][
+                            game_idx
+                        ]
                     tem_action_count_list.append(tem_action_count)
                 total_action_count_dict[player_name].append(tem_action_count_list)
 
@@ -1116,10 +1370,15 @@ class OpenWorldExpt:
                 aggregate_dict[player_name + "_" + a + "_normalized_mean"] = []
                 aggregate_dict[player_name + "_" + a + "_normalized_ste"] = []
                 aggregate_dict[player_name + "_" + a + "_sample_size"] = []
-                for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-
-                    action_count_list = np.array(output_dict[tournament_idx][player_name][a])
-                    action_total_count_list = np.array(total_action_count_dict[player_name][tournament_idx])
+                for tournament_idx, tournament_summary in enumerate(
+                    self.tournament_hist
+                ):
+                    action_count_list = np.array(
+                        output_dict[tournament_idx][player_name][a]
+                    )
+                    action_total_count_list = np.array(
+                        total_action_count_dict[player_name][tournament_idx]
+                    )
                     assert len(action_count_list) == len(action_total_count_list)
                     normalized_action_count_list = (
                         np.divide(
@@ -1131,11 +1390,16 @@ class OpenWorldExpt:
                         * 100
                     )
 
-                    aggregate_dict[player_name + "_" + a + "_normalized_mean"].append(np.mean(normalized_action_count_list))
-                    aggregate_dict[player_name + "_" + a + "_normalized_ste"].append(
-                        np.std(normalized_action_count_list, ddof=1) / np.sqrt(np.size(normalized_action_count_list))
+                    aggregate_dict[player_name + "_" + a + "_normalized_mean"].append(
+                        np.mean(normalized_action_count_list)
                     )
-                    aggregate_dict[player_name + "_" + a + "_sample_size"].append(np.size(normalized_action_count_list))
+                    aggregate_dict[player_name + "_" + a + "_normalized_ste"].append(
+                        np.std(normalized_action_count_list, ddof=1)
+                        / np.sqrt(np.size(normalized_action_count_list))
+                    )
+                    aggregate_dict[player_name + "_" + a + "_sample_size"].append(
+                        np.size(normalized_action_count_list)
+                    )
 
         aggregate_df = pd.DataFrame(aggregate_dict)
         aggregate_df.to_csv(self.output_path + "normalized_aggregation.csv")
@@ -1155,6 +1419,25 @@ class OpenWorldExpt:
                     fmt="o",
                 )
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
@@ -1176,6 +1459,25 @@ class OpenWorldExpt:
 
             tem_model = model_abbreviation_dict[game_agent_list[player_idx - 1]]
             plt.grid()
+            if player_idx == 1:
+                novelty_detection_tournament_idx = [
+                    idx + 1
+                    for idx, val in enumerate(self.novelty_detection_list)
+                    if val == 1
+                ]
+                novelty_detection_idx = (
+                    novelty_detection_tournament_idx[0]
+                    if novelty_detection_tournament_idx
+                    else None
+                )
+                if novelty_detection_idx is not None:
+                    plt.axvline(
+                        x=novelty_detection_idx,
+                        color="black",
+                        linestyle="--",
+                        alpha=0.8,
+                        label="Novelty Detected",
+                    )
             plt.title(f"player_{player_idx}({tem_model})")
             plt.xlabel("Tournament number")
             plt.xlim(-5, total_tournament_count + 5)
@@ -1225,7 +1527,13 @@ class OpenWorldExpt:
         }
 
         for tournament_idx, tournament_summary in enumerate(self.tournament_hist):
-            tem_dict = {"player_1": [], "agent_random": [], "agent_dump": [], "agent_p": [], "others": []}
+            tem_dict = {
+                "player_1": [],
+                "agent_random": [],
+                "agent_dump": [],
+                "agent_p": [],
+                "others": [],
+            }
 
             if measurement == "cash":
                 # we only care about the last game in each tournament
@@ -1298,28 +1606,46 @@ class OpenWorldExpt:
                 for player_idx in range(player_num):
                     agent = game_agent_list[player_idx]
                     if agent in tem_dict:
-                        tem_dict[agent].append(win_counter[game_cash_summary[player_idx]])
+                        tem_dict[agent].append(
+                            win_counter[game_cash_summary[player_idx]]
+                        )
                         if player_idx != 0:
-                            tem_dict["others"].append(win_counter[game_cash_summary[player_idx]])
+                            tem_dict["others"].append(
+                                win_counter[game_cash_summary[player_idx]]
+                            )
 
             # aggregate:
-            for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
+            for model in [
+                "player_1",
+                "agent_random",
+                "agent_dump",
+                "agent_p",
+                "others",
+            ]:
                 coef = 1
                 if measurement == "winning_percentage":
                     coef = 100
 
                 out_dict["pre_" + model].append(np.mean(tem_dict[model]) * coef)
                 if model != "player_1":
-                    out_dict["pre_" + model + "_std"].append(np.std(tem_dict[model], ddof=1) * coef)
+                    out_dict["pre_" + model + "_std"].append(
+                        np.std(tem_dict[model], ddof=1) * coef
+                    )
                     out_dict["pre_" + model + "_ste"].append(
-                        np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])) * coef
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                        * coef
                     )
 
                 out_dict["post_" + model].append(np.mean(tem_dict[model]) * coef)
                 if model != "player_1":
-                    out_dict["post_" + model + "_std"].append(np.std(tem_dict[model], ddof=1) * coef)
+                    out_dict["post_" + model + "_std"].append(
+                        np.std(tem_dict[model], ddof=1) * coef
+                    )
                     out_dict["post_" + model + "_ste"].append(
-                        np.std(tem_dict[model], ddof=1) / np.sqrt(np.size(tem_dict[model])) * coef
+                        np.std(tem_dict[model], ddof=1)
+                        / np.sqrt(np.size(tem_dict[model]))
+                        * coef
                     )
 
         # print(out_dict)
@@ -1327,7 +1653,10 @@ class OpenWorldExpt:
         df.to_csv(self.output_path + "pre_post_" + measurement + ".csv")
         # aggregation
 
-        self.NN_count = 20
+        try:
+            novelty_detected_idx = self.novelty_detection_list.index(True)
+        except ValueError:
+            novelty_detected_idx = None
         """
         retrun_dict = dict()
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
@@ -1345,25 +1674,71 @@ class OpenWorldExpt:
         """
         retrun_dict = dict()
         for model in ["player_1", "agent_random", "agent_dump", "agent_p", "others"]:
-            retrun_dict["pre_" + model + "_" + measurement] = np.mean(df["pre_" + model][: self.NN_count])
+            retrun_dict["pre_" + model + "_" + measurement] = np.mean(
+                df["pre_" + model][: self.NN_count]
+            )
+            if novelty_detected_idx:
+                retrun_dict["pre_nd_" + model + "_" + measurement] = np.mean(
+                    df["pre_" + model][:novelty_detected_idx]
+                )
             if model == "player_1":
-                retrun_dict["pre_" + model + "_" + measurement + "_std"] = np.std(df["pre_" + model][: self.NN_count], ddof=1)
+                retrun_dict["pre_" + model + "_" + measurement + "_std"] = np.std(
+                    df["pre_" + model][: self.NN_count], ddof=1
+                )
                 retrun_dict["pre_" + model + "_" + measurement + "_ste"] = np.std(
                     df["pre_" + model][: self.NN_count], ddof=1
                 ) / np.sqrt(np.size(df["pre_" + model][: self.NN_count]))
+                if novelty_detected_idx:
+                    retrun_dict[
+                        "pre_nd_" + model + "_" + measurement + "_std"
+                    ] = np.std(df["pre_" + model][:novelty_detected_idx], ddof=1)
+                    retrun_dict[
+                        "pre_nd_" + model + "_" + measurement + "_ste"
+                    ] = np.std(
+                        df["pre_" + model][:novelty_detected_idx], ddof=1
+                    ) / np.sqrt(
+                        np.size(df["pre_" + model][:novelty_detected_idx])
+                    )
             else:
                 tem_std = np.array(df["pre_" + model + "_std"][: self.NN_count])
-                retrun_dict["pre_" + model + "_" + measurement + "_std"] = (sum(tem_std * tem_std) / len(tem_std)) ** 0.5
-                retrun_dict["pre_" + model + "_" + measurement + "_ste"] = (sum(tem_std * tem_std)) ** 0.5 / len(tem_std)
+                retrun_dict["pre_" + model + "_" + measurement + "_std"] = (
+                    sum(tem_std * tem_std) / len(tem_std)
+                ) ** 0.5
+                retrun_dict["pre_" + model + "_" + measurement + "_ste"] = (
+                    sum(tem_std * tem_std)
+                ) ** 0.5 / len(tem_std)
 
-            retrun_dict["post_" + model + "_" + measurement] = np.mean(df["post_" + model][self.NN_count :])
+            retrun_dict["post_" + model + "_" + measurement] = np.mean(
+                df["post_" + model][self.NN_count :]
+            )
+            if novelty_detected_idx:
+                retrun_dict["post_nd_" + model + "_" + measurement] = np.mean(
+                    df["post_" + model][novelty_detected_idx:]
+                )
             if model == "player_1":
-                retrun_dict["post_" + model + "_" + measurement + "_std"] = np.std(df["post_" + model][self.NN_count :], ddof=1)
+                retrun_dict["post_" + model + "_" + measurement + "_std"] = np.std(
+                    df["post_" + model][self.NN_count :], ddof=1
+                )
                 retrun_dict["post_" + model + "_" + measurement + "_ste"] = np.std(
                     df["post_" + model][self.NN_count :], ddof=1
                 ) / np.sqrt(np.size(df["post_" + model][self.NN_count :]))
+                if novelty_detected_idx:
+                    retrun_dict[
+                        "post_nd_" + model + "_" + measurement + "_std"
+                    ] = np.std(df["post_" + model][novelty_detected_idx:], ddof=1)
+                    retrun_dict[
+                        "post_nd_" + model + "_" + measurement + "_ste"
+                    ] = np.std(
+                        df["post_" + model][novelty_detected_idx:], ddof=1
+                    ) / np.sqrt(
+                        np.size(df["post_" + model][novelty_detected_idx:])
+                    )
             else:
-                tem_std = np.array(df["post_" + model + "_std"][self.NN_count :]) 
-                retrun_dict["post_" + model + "_" + measurement + "_std"] = (sum(tem_std * tem_std) / len(tem_std)) ** 0.5
-                retrun_dict["post_" + model + "_" + measurement + "_ste"] = (sum(tem_std * tem_std)) ** 0.5 / len(tem_std)
+                tem_std = np.array(df["post_" + model + "_std"][self.NN_count :])
+                retrun_dict["post_" + model + "_" + measurement + "_std"] = (
+                    sum(tem_std * tem_std) / len(tem_std)
+                ) ** 0.5
+                retrun_dict["post_" + model + "_" + measurement + "_ste"] = (
+                    sum(tem_std * tem_std)
+                ) ** 0.5 / len(tem_std)
         return retrun_dict
